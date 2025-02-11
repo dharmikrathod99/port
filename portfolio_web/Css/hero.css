@@ -1,0 +1,239 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: white;
+}
+.hero-section{
+    margin-top: 71px !important;
+}
+.otherConten {
+    width: 100vh;
+    height: 100vh;
+    background-color: red;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.screen {
+    height: 100vh;
+    top: 0;
+}
+
+.blcScr {
+    background-color: black;
+    z-index: 2;
+    transform: translateX(0);
+    animation: slideLeft 1.5s ease forwards 0.4s, slideRight 1s ease forwards 3.5s;
+}
+
+.witScr {
+    background-color: white;
+    z-index: 1;
+    transform: translateX(100%);
+    animation: slideIn 1.5s ease forwards 0.4s;
+}
+
+/* Centered intro text across both screens */
+.introText {
+    position: absolute;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Roboto Condensed", sans-serif;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to right, white 50%, black 50%);
+    -webkit-background-clip: text;
+    color: transparent;
+    opacity: 0;
+    animation: textFadeIn 1s forwards 2s, textColorChange 1s ease forwards 3.5s;
+}
+
+/* Hero intro section */
+.heroIntro {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeInHero 1s forwards 4s;
+}
+
+/* Hero image */
+.heroImg {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(0.8);
+    opacity: 0;
+    animation: fadeInImage 1.5s forwards 4s;
+}
+.heroImg{
+    background-image:url(../img/WhatsApp\ Image\ 2025-02-07\ at\ 21.15.59_61fa7999.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    
+}
+
+.HeroText {
+    position: relative;
+    z-index: 5;
+    padding: 10px;
+    margin: 10px;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.HeroText p {
+    color: white;
+    margin: 0;
+    opacity: 0;
+    animation: textSlideIn 0.5s ease forwards;
+}
+
+.HeroText p:nth-child(1) {
+    animation-delay: 4.8s;
+    font-size: 1.5rem;
+}
+
+.HeroText p:nth-child(2) {
+    /* font-size: 3.5rem; */
+    animation-delay: 5.3s;
+}
+
+
+/* Text cycling effect */
+.prof {
+    font-size: 2.0rem;
+    font-weight: bold;
+    opacity: 0;
+    animation: textFadeInOut 6s infinite;
+    display: inline-block;
+}
+
+/* Fade in and out animation for cycling text */
+@keyframes textFadeInOut {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    25%,
+    75% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes textFadeIn {
+    from {
+        opacity: 0;
+        font-size: 155px;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes textColorChange {
+    0% {
+        color: transparent;
+    }
+
+    100% {
+        color: white;
+        transform: translateX(28%) translateY(-50%);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(50%);
+    }
+}
+
+@keyframes fadeInHero {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes textSlideIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/*=============> custom css<=============== */
+.downloadcv{
+    border-radius: 8px;
+}
+.downloadcv :hover{
+    scale: 1.2;
+    border-radius: 10px;
+}
+.icones{
+    gap:15px;
+}
+.introText-ex{
+    color: white;
+}
